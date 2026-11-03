@@ -218,3 +218,82 @@ legend {
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 24px;
 }
+
+#om-oss {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 32px;
+}
+
+#om-oss h2 {
+  grid-column: 1 / -1;
+  margin-top: 0;
+}
+
+#om-oss img {
+  grid-column: 2;
+  grid-row: 2 / span 2;
+}
+
+/* Dölj checkboxen men behåll den tillgänglig för tangentbord */
+.meny-toggle {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Hamburgarikonen: dold på bred skärm */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  width: 30px;
+  padding: 4px;
+  cursor: pointer;
+}
+
+.hamburger span {
+  display: block;
+  height: 3px;
+  background: #ffffff;
+  border-radius: 2px;
+  transition:
+    transform 0.3s,
+    opacity 0.3s;
+}
+
+/* Smal skärm */
+@media (max-width: 600px) {
+  .hamburger {
+    display: flex;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 0.5rem;
+  }
+
+  /* Visa menyn när checkboxen är ikryssad */
+  .meny-toggle:checked ~ ul {
+    display: flex;
+  }
+
+  /* Animera de tre strecken till ett kryss */
+  .meny-toggle:checked + .hamburger span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  .meny-toggle:checked + .hamburger span:nth-child(2) {
+    opacity: 0;
+  }
+  .meny-toggle:checked + .hamburger span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* Synlig fokusmarkering för tangentbordsanvändare */
+  .meny-toggle:focus-visible + .hamburger {
+    outline: 2px solid #005fcc;
+    outline-offset: 2px;
+  }
+}

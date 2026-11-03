@@ -10,10 +10,20 @@
     <header>
       <h1>Kafé Kardemumma</h1>
       <nav aria-label="Huvudmeny">
+        <input type="checkbox" id="meny-toggle" class="meny-toggle" />
+        <label
+          for="meny-toggle"
+          class="hamburger"
+          aria-label="Visa eller dölj menyn"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </label>
         <ul>
+          <li><a href="#">Startsida</a></li>
           <li><a href="#meny">Meny</a></li>
-          <li><a href="#om-oss">Om oss</a></li>
-          <li><a href="kontakt.html">Boka bord</a></li>
+          <li><a href="kontakt.html" aria-current="page">Boka bord</a></li>
         </ul>
       </nav>
     </header>
