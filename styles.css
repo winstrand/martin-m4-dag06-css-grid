@@ -297,3 +297,22 @@ legend {
     outline-offset: 2px;
   }
 }
+
+/*
+Grid:
+========
+Element: .menu-list, #om-oss
+Varför: Grid gör det enkelt att skapa komplexa
+        layouter med rader och kolumner för hela
+        sidor/block (delar av sidan).
+        Och det är lätt att göra responsiva layouter.
+
+
+
+
+Flexbox:
+========
+Element: header, footer, nav ul, article, .hamburger
+Varför: Flexbox gör det enkelt att justera elementens storlek,
+        ordning och placering inom en container.
+*/
